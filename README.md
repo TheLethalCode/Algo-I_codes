@@ -1,2 +1,7 @@
 # Algo-I_codes
-All codes about algorithm 1
+
+Repository containing all the codes going on in the Algorithm-I class.
+
+Topics (till present):
+- BST
+- RBT
