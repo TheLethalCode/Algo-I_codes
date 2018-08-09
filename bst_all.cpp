@@ -82,50 +82,55 @@ node * in_succ(node *cur)
 	else return reach_left(cur->right);
 }
 
-node * del(node *root, int data)
+node * del(node *root, node *z)
 {
-  if (root == NULL)
-  {
-     return NULL;
-  }
-  if (data < root->val)
-  { 
-      root->left = del(root->left, data);
-  } 
-  else if (data > root->val) 
-  { 
-      root->right = del(root->right, data);
-  } 
-  else 
-  {
-     // case 1
-     if (root->left == NULL && root->right == NULL) 
-     {
-        delete(root); 
-        root = NULL;
-     }
-     // case 2 && case 3
-     else if (root->left == NULL) 
-     {
-        node *temp = root; 
-        root = root->right;
-        delete temp;
-     }
-     else if (root->right == NULL) 
-     {
-        node *temp = root; 
-        root = root->left;
-        delete temp;
-     }
-     //case 4
-     else 
-     {
-        node *temp = reach_left(root->right); 
-        root->val = temp->val;
-        root->right = del(root->right, temp->val); 
-     }
-  }
-  return root; 
+	if(z->left == NULL && z->right == NULL)
+	{
+		if(z->parent==NULL)root = NULL;
+		else if(z->parent->right == z) z->parent->right = NULL;
+		else z->parent->left = NULL;
+		delete(z);
+	}
+	else if(z->left == NULL)
+	{
+		if(z->parent==NULL)root = z->right;
+		else if(z->parent->right == z) z->parent->right = z->right;
+		else z->parent->left = z->right;
+		z->right->parent=z->parent;
+		delete(z);
+	}
+	else if(z->right == NULL)
+	{
+		if(z->parent==NULL)root = z->left;
+		else if(z->parent->right == z) z->parent->right = z->left;
+		else z->parent->left = z->left;
+		z->right->parent=z->parent;
+		delete(z);
+	}
+	else
+	{
+		node *y = reach_left(z->right);
+		if(y==z->right)
+		{
+			y->parent=z->parent;
+			if(z->parent == NULL)root=y;
+			else if(z->parent->right == z) z->parent->right = y;
+			else z->parent->left = y;
+		}
+		else
+		{
+			y->parent->left = y->right;
+			if(y->right != NULL) y->right->parent=y->parent;
+			y->parent=z->parent;
+			if(z->parent == NULL)root=y;
+			else if(z->parent->right == z) z->parent->right = y;
+			else z->parent->left = y;
+			y->left=z->left;
+			y->right=z->right;
+			delete(z);
+		}
+	}
+	return root; 
 }
 
 int main(int argc, char **argv)
@@ -139,15 +144,8 @@ int main(int argc, char **argv)
 		cin>>v[i];
 		root = insert(root,v[i],NULL);
 	}
-	//inorder(root);
-	//cout<<endl;
-	//preorder(root);
-	//cout<<endl;
-	//postorder(root);
-	// int a=0;
-	// cin>>a;
-	// node *re = search(root,a);	
-	del(root,5);
+	node *a=search(root,5);
+	root = del(root,a);
 	inorder(root);
 	return 0;
 }
