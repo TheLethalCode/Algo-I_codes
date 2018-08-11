@@ -104,7 +104,7 @@ node * del(node *root, node *z)
 		if(z->parent==NULL)root = z->left;
 		else if(z->parent->right == z) z->parent->right = z->left;
 		else z->parent->left = z->left;
-		z->right->parent=z->parent;
+		z->left->parent=z->parent;
 		delete(z);
 	}
 	else
@@ -116,6 +116,9 @@ node * del(node *root, node *z)
 			if(z->parent == NULL)root=y;
 			else if(z->parent->right == z) z->parent->right = y;
 			else z->parent->left = y;
+			y->left=z->left;
+			if(z->left!=NULL)z->left->parent=y;
+			delete(z);
 		}
 		else
 		{
@@ -126,7 +129,9 @@ node * del(node *root, node *z)
 			else if(z->parent->right == z) z->parent->right = y;
 			else z->parent->left = y;
 			y->left=z->left;
+			if(z->left != NULL) z->left->parent=y;	
 			y->right=z->right;
+			if(z->right != NULL) z->right->parent=y;
 			delete(z);
 		}
 	}
@@ -144,7 +149,7 @@ int main(int argc, char **argv)
 		cin>>v[i];
 		root = insert(root,v[i],NULL);
 	}
-	node *a=search(root,5);
+	node *a=search(root,8);
 	root = del(root,a);
 	inorder(root);
 	return 0;
