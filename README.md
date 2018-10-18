@@ -1,30 +1,41 @@
 # Algo-I_codes
 
-Repository containing all the codes going on in the Algorithm-I class.
+Repository containing all the codes covered in the Algorithm-I class.
 
 Topics (till present):
-- BST
-  - Traversal(inorder, preorder, postorder)
-  - Inorder Succesor
-  - Search
-  - Insertion
-  - Deletion
-- RBT
-  - Left and right rotation
-  - Traversal and Search
-  - Insertion
-  - Deletion
+(* No code present)
+
+- Divide and Conquer
+  - Strassen's Matrix Multiplications
+  - Maximum Subarray Problem
+  - Karatsuba Big Integer Multiplication
+  - Closest Point Pair
+
+- Sorting
+  - Insertion sort
+  - Merge Sort
+  - Heap Sort (and Priority Queues)
+  - Quick Sort
+  - Count Sort
+  - Radix Sort
+  - Bucket Sort
+  - Kth Smallest Element
+
 - Hashing
-  - Direct Address Tables
-  - Hash tables
-  - Chaining
-  - Open Addressing
+  - Direct Address Tables *
+  - Hash tables *
+  - Chaining *
+  - Open Addressing *
     - Linear Probing
     - Quadratic Probing
     - Double Hashing
-- Sorting
-  - Insertion sort
-  - Merge sort
-  - Quick sort
-  - Radix sort
-  - Count sort
+
+- Trees
+  - Binary Search Trees
+    - Traversal(inorder, preorder, postorder)
+    - Inorder Succesor
+    - Search, Insertion, Deletion
+  - RBT
+    - Left and Right Rotation
+    - Insertion
+
