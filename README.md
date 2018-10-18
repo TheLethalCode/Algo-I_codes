@@ -1,9 +1,9 @@
 # Algo-I_codes
 
-Repository containing all the codes covered in the Algorithm-I class.
+Repository containing all the programs covered in the Algorithm-I class.
 
-Topics (till present):
-(* No code present)
+## Topics (till present):
+(* No code available)
 
 - Divide and Conquer
   - Strassen's Matrix Multiplications
