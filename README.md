@@ -16,9 +16,8 @@ Repository containing all the programs covered in the Algorithm-I class.
   - Merge Sort
   - Heap Sort (and Priority Queues)
   - Quick Sort
-  - Count Sort
-  - Radix Sort
-  - Bucket Sort
+  - Count & Radix Sort
+  - Bucket Sort *
   - Kth Smallest Element
 
 - Hashing

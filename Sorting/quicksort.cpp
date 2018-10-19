@@ -4,9 +4,7 @@ using namespace std;
 int partition(int v[], int p, int r)
 {
 	int x=rand()%(r-p+1) + p;
-	int temp1= v[x];
-	v[x]=v[r];
-	v[r]=temp1;
+	swap(v[x],v[r]);
 	int i=p-1,val=v[r];
 	int j=p;
 	while(j<r)
@@ -48,5 +46,4 @@ int main(int argc, char **argv)
 	cout<<"The sorted array is .....\n";
 	for(int i=0;i<n;i++) cout<<v[i]<<" ";
 	return 0;
-
 }
