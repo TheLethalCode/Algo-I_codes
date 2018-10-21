@@ -38,3 +38,12 @@ Repository containing all the programs covered in the Algorithm-I class.
     - Left and Right Rotation
     - Insertion
 
+- Dynamic Programming
+  - Matrix-chain Multiplication
+  - Longest Common Subsequence
+  - Weighted Activity Selection
+  - O-1 Knapsack
+
+- Greedy
+  - Activity Selection
+  - Fractional Knapsack
