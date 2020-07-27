@@ -2,7 +2,7 @@
 
 Repository containing all the programs covered in the Algorithm-I class.
 
-## Topics (till present):
+## Topics:
 (* No code available)
 
 - Divide and Conquer
